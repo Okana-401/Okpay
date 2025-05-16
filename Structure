@@ -1,0 +1,6 @@
+OKpay/
+│
+├── index.html
+├── style.css
+├── app.js
+└── manifest.json (ho an’ny offline PWA)
