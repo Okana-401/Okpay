@@ -24,7 +24,17 @@ function loadDashboard() {
   const username = localStorage.getItem("okpayUser");
   document.getElementById("welcome").innerText = `Welcome, ${username}`;
   document.getElementById("balance").innerText = localStorage.getItem("okpayBalance");
+const texts = {
+  mg: { welcome: "Tongasoa eto amin'ny OKpay" },
+  fr: { welcome: "Bienvenue sur OKpay" },
+  en: { welcome: "Welcome to OKpay" }
+};
 
+document.getElementById('langSwitcher').addEventListener('change', (e) => {
+  const lang = e.target.value;
+  document.getElementById('welcomeText').textContent = texts[lang].welcome;
+});
+  
   const transactions = JSON.parse(localStorage.getItem("okpayTransactions") || "[]");
   const list = document.getElementById("transactions");
   list.innerHTML = "";
